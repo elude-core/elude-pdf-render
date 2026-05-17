@@ -18,7 +18,7 @@ RUN npm run build && npm run typecheck
 # ─── Stage 2 : runtime ──────────────────────────────────────────────────────
 # Base : image officielle Playwright (Chromium pré-installé + libs système).
 # ~600 Mo mais évite d'installer manuellement libs Chromium dans une alpine.
-FROM mcr.microsoft.com/playwright:v1.49.1-jammy AS runtime
+FROM mcr.microsoft.com/playwright:v1.60.0-jammy AS runtime
 
 WORKDIR /app
 

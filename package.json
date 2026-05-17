@@ -14,7 +14,7 @@
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "hono": "^4.6.14",
-    "playwright": "^1.49.1",
+    "playwright": "1.60.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
