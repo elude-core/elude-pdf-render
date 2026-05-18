@@ -14,7 +14,24 @@ const Env = z.object({
   ALLOWED_URL_HOSTS: z
     .string()
     .default(
-      "dev.pro-cisailles.com,pro-storefront.vercel.app,cisailles.stackindepend.fr,massicots.stackindepend.fr,rogneuses.stackindepend.fr,agrafeuses.stackindepend.fr,destructeurs.stackindepend.fr,plastifieuses.stackindepend.fr,machines-a-relier.stackindepend.fr,localhost:3000",
+      [
+        // 7 brands x {prod, dev}
+        "pro-cisailles.com", "dev.pro-cisailles.com",
+        "pro-massicots.com", "dev.pro-massicots.com",
+        "pro-rogneuses.com", "dev.pro-rogneuses.com",
+        "pro-agrafeuses.com", "dev.pro-agrafeuses.com",
+        "pro-destructeurs.com", "dev.pro-destructeurs.com",
+        "pro-plastifieuses.com", "dev.pro-plastifieuses.com",
+        "pro-machines-a-relier.com", "dev.pro-machines-a-relier.com",
+        // Staging legacy
+        "pro-storefront.vercel.app",
+        "cisailles.stackindepend.fr", "massicots.stackindepend.fr",
+        "rogneuses.stackindepend.fr", "agrafeuses.stackindepend.fr",
+        "destructeurs.stackindepend.fr", "plastifieuses.stackindepend.fr",
+        "machines-a-relier.stackindepend.fr",
+        // Local dev
+        "localhost:3000",
+      ].join(","),
     ),
   /** Timeout max de la navigation Playwright. */
   RENDER_TIMEOUT_MS: z.coerce.number().int().positive().default(30000),
