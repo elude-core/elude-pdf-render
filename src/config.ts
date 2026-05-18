@@ -23,12 +23,6 @@ const Env = z.object({
         "pro-destructeurs.com", "dev.pro-destructeurs.com",
         "pro-plastifieuses.com", "dev.pro-plastifieuses.com",
         "pro-machines-a-relier.com", "dev.pro-machines-a-relier.com",
-        // Staging legacy
-        "pro-storefront.vercel.app",
-        "cisailles.stackindepend.fr", "massicots.stackindepend.fr",
-        "rogneuses.stackindepend.fr", "agrafeuses.stackindepend.fr",
-        "destructeurs.stackindepend.fr", "plastifieuses.stackindepend.fr",
-        "machines-a-relier.stackindepend.fr",
         // Local dev
         "localhost:3000",
       ].join(","),
