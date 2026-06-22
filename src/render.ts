@@ -46,7 +46,9 @@ export type RenderOptions = {
   };
   printBackground?: boolean;
   /** CSS selector à attendre avant de capturer (ex: `[data-pdf-ready]`).
-   *  Fallback : on attend `networkidle`. */
+   *  C'est LE signal de prêt. Le goto attend `load` (PAS `networkidle` : une
+   *  preview Vercel/analytics garde une WebSocket ouverte → networkidle jamais
+   *  atteint → timeout 30s → render 502). */
   waitFor?: string;
   /** Délai max avant capture (default 30s, capé par RENDER_TIMEOUT_MS). */
   timeoutMs?: number;
@@ -66,7 +68,7 @@ export async function renderPdf(url: string, opts: RenderOptions = {}): Promise<
 
   try {
     const navTimeout = Math.min(opts.timeoutMs ?? 30000, config.RENDER_TIMEOUT_MS);
-    await page.goto(url, { waitUntil: "networkidle", timeout: navTimeout });
+    await page.goto(url, { waitUntil: "load", timeout: navTimeout });
 
     if (opts.waitFor) {
       await page.waitForSelector(opts.waitFor, { timeout: 10000 });
