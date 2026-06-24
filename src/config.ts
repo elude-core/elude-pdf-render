@@ -15,14 +15,14 @@ const Env = z.object({
     .string()
     .default(
       [
-        // 7 brands x {prod, dev}
-        "pro-cisailles.com", "dev.pro-cisailles.com",
-        "pro-massicots.com", "dev.pro-massicots.com",
-        "pro-rogneuses.com", "dev.pro-rogneuses.com",
-        "pro-agrafeuses.com", "dev.pro-agrafeuses.com",
-        "pro-destructeurs.com", "dev.pro-destructeurs.com",
-        "pro-plastifieuses.com", "dev.pro-plastifieuses.com",
-        "pro-machines-a-relier.com", "dev.pro-machines-a-relier.com",
+        // 7 brands x {www (prod servi), dev, preprod}
+        "www.pro-cisailles.com", "dev.pro-cisailles.com", "preprod.pro-cisailles.com",
+        "www.pro-massicots.com", "dev.pro-massicots.com", "preprod.pro-massicots.com",
+        "www.pro-rogneuses.com", "dev.pro-rogneuses.com", "preprod.pro-rogneuses.com",
+        "www.pro-agrafeuses.com", "dev.pro-agrafeuses.com", "preprod.pro-agrafeuses.com",
+        "www.pro-destructeurs.com", "dev.pro-destructeurs.com", "preprod.pro-destructeurs.com",
+        "www.pro-plastifieuses.com", "dev.pro-plastifieuses.com", "preprod.pro-plastifieuses.com",
+        "www.pro-machines-a-relier.com", "dev.pro-machines-a-relier.com", "preprod.pro-machines-a-relier.com",
         // Local dev
         "localhost:3000",
       ].join(","),
