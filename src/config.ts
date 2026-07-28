@@ -15,7 +15,8 @@ const Env = z.object({
     .string()
     .default(
       [
-        // 7 brands x {www (prod servi), dev, preprod}
+        // 7 pro-* + wynstor (store mère) x {www (prod servi), dev, preprod}
+        "www.wynstor.com", "dev.wynstor.com", "preprod.wynstor.com",
         "www.pro-cisailles.com", "dev.pro-cisailles.com", "preprod.pro-cisailles.com",
         "www.pro-massicots.com", "dev.pro-massicots.com", "preprod.pro-massicots.com",
         "www.pro-rogneuses.com", "dev.pro-rogneuses.com", "preprod.pro-rogneuses.com",
